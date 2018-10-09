@@ -997,6 +997,9 @@
               flattenedTree,
               this.props.scrollToId,
             );
+            var rowRenderer = this.props.rowRenderer
+              ? this.props.rowRenderer(this.handleChange, this.props.nodeMarginLeft)
+              : null;
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_2__Tree__['a' /* default */],
               {
@@ -1005,9 +1008,7 @@
                 onChange: this.handleChange,
                 NodeRenderer: this.props.children,
                 scrollToIndex: rowIndex,
-                rowRenderer: this.props.rowRenderer
-                  ? this.props.rowRenderer(this.props.nodeMarginLeft, this.handleChange)
-                  : null,
+                rowRenderer: rowRenderer,
               },
             );
           };
