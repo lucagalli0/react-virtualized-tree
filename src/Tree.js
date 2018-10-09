@@ -26,7 +26,11 @@ export default class Tree extends React.Component {
 
     return (
       <CellMeasurer cache={this._cache} columnIndex={0} key={key} rowIndex={index} parent={parent}>
-        {m => this.rowRenderer({...m, node, key, style, NodeRenderer})}
+        {m =>
+          this.props.rowRenderer
+            ? this.props.rowRenderer({...m, node, key, style, NodeRenderer})
+            : this.rowRenderer({...m, node, key, style, NodeRenderer})
+        }
       </CellMeasurer>
     );
   };
