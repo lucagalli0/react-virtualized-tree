@@ -4065,25 +4065,18 @@ object-assign
               nodeParentMappings = _ref2.nodeParentMappings;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.Fragment,
               null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                null,
-                typeof this.props.inputFilter === 'function'
-                  ? this.props.inputFilter({
-                      filterText: filterText,
-                      handleFilterTextChange: this.handleFilterTextChange,
-                    })
-                  : null,
-                typeof this.props.groups === 'function'
-                  ? this.props.groups({
-                      groups: groups,
-                      selectedGroup: selectedGroup,
-                      onSelectedGroupChange: onSelectedGroupChange,
-                    })
-                  : null,
-              ),
+              typeof this.props.inputFilter === 'function'
+                ? this.props.inputFilter({filterText: filterText, handleFilterTextChange: this.handleFilterTextChange})
+                : null,
+              typeof this.props.groups === 'function'
+                ? this.props.groups({
+                    groups: groups,
+                    selectedGroup: selectedGroup,
+                    onSelectedGroupChange: onSelectedGroupChange,
+                  })
+                : null,
               treeRenderer({nodes: filteredNodes, nodeParentMappings: nodeParentMappings}),
             );
           };

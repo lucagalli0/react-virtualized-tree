@@ -64,17 +64,15 @@ export default class FilteringContainer extends React.Component {
       : relevantNodes;
 
     return (
-      <div>
-        <div>
-          {typeof this.props.inputFilter === 'function'
-            ? this.props.inputFilter({filterText, handleFilterTextChange: this.handleFilterTextChange})
-            : null}
-          {typeof this.props.groups === 'function'
-            ? this.props.groups({groups, selectedGroup, onSelectedGroupChange})
-            : null}
-        </div>
+      <React.Fragment>
+        {typeof this.props.inputFilter === 'function'
+          ? this.props.inputFilter({filterText, handleFilterTextChange: this.handleFilterTextChange})
+          : null}
+        {typeof this.props.groups === 'function'
+          ? this.props.groups({groups, selectedGroup, onSelectedGroupChange})
+          : null}
         {treeRenderer({nodes: filteredNodes, nodeParentMappings})}
-      </div>
+      </React.Fragment>
     );
   }
 }
