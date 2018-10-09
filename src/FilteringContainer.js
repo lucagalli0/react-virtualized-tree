@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import classNames from 'classnames';
 
 import DefaultGroupRenderer from './filtering/DefaultGroupRenderer';
 import {Node} from './shapes/nodeShapes';
@@ -53,14 +52,7 @@ export default class FilteringContainer extends React.Component {
 
   render() {
     const {filterTerm, filterText} = this.state;
-    const {
-      nodes,
-      children: treeRenderer,
-      groups,
-      selectedGroup,
-      groupRenderer: GroupRenderer,
-      onSelectedGroupChange,
-    } = this.props;
+    const {nodes, children: treeRenderer, groups, selectedGroup} = this.props;
 
     const relevantNodes =
       groups && selectedGroup && groups[selectedGroup]
@@ -72,11 +64,14 @@ export default class FilteringContainer extends React.Component {
       : relevantNodes;
 
     return (
-      <div className="tree-filter-container">
-        <div className={classNames('tree-lookup-input', {group: !!groups})}>
-          <input value={filterText} onChange={this.handleFilterTextChange} placeholder="Search..." />
-          <i aria-hidden="true" className="mi mi-11 mi-search" />
-          {groups && <GroupRenderer groups={groups} selectedGroup={selectedGroup} onChange={onSelectedGroupChange} />}
+      <div>
+        <div>
+          {typeof this.props.inputFilter === 'function'
+            ? this.props.inputFilter({filterText, handleFilterTextChange: this.handleFilterTextChange})
+            : null}
+          {typeof this.props.groups === 'function'
+            ? this.props.groups({groups, selectedGroup, onSelectedGroupChange})
+            : null}
         </div>
         {treeRenderer({nodes: filteredNodes, nodeParentMappings})}
       </div>

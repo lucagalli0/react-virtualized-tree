@@ -148,7 +148,7 @@
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_omit___default = __webpack_require__.n(
           __WEBPACK_IMPORTED_MODULE_1_lodash_omit__,
         );
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contants__ = __webpack_require__(5);
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contants__ = __webpack_require__(4);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__getFlattenedTree__ = __webpack_require__(9);
         /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, 'getFlattenedTree', function() {
           return __WEBPACK_IMPORTED_MODULE_3__getFlattenedTree__['a'];
@@ -351,6 +351,21 @@
         /***/
       },
       /* 4 */
+      /***/ function(module, __webpack_exports__, __webpack_require__) {
+        'use strict';
+        Object.defineProperty(__webpack_exports__, '__esModule', {value: true});
+        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'UPDATE_TYPE', function() {
+          return UPDATE_TYPE;
+        });
+        var UPDATE_TYPE = {
+          ADD: 0,
+          DELETE: 1,
+          UPDATE: 2,
+        };
+
+        /***/
+      },
+      /* 5 */
       /***/ function(module, exports, __webpack_require__) {
         var __WEBPACK_AMD_DEFINE_ARRAY__,
           __WEBPACK_AMD_DEFINE_RESULT__; /*!
@@ -407,21 +422,6 @@
             window.classNames = classNames;
           }
         })();
-
-        /***/
-      },
-      /* 5 */
-      /***/ function(module, __webpack_exports__, __webpack_require__) {
-        'use strict';
-        Object.defineProperty(__webpack_exports__, '__esModule', {value: true});
-        /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, 'UPDATE_TYPE', function() {
-          return UPDATE_TYPE;
-        });
-        var UPDATE_TYPE = {
-          ADD: 0,
-          DELETE: 1,
-          UPDATE: 2,
-        };
 
         /***/
       },
@@ -836,7 +836,7 @@
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__TreeContainer__ = __webpack_require__(14);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__selectors_nodes__ = __webpack_require__(2);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__renderers__ = __webpack_require__(21);
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__contants__ = __webpack_require__(5);
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__contants__ = __webpack_require__(4);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__FilteringContainer__ = __webpack_require__(25);
         /* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, 'selectors', function() {
           return __WEBPACK_IMPORTED_MODULE_1__selectors_nodes__;
@@ -871,7 +871,7 @@
           __WEBPACK_IMPORTED_MODULE_1_prop_types__,
         );
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Tree__ = __webpack_require__(18);
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__contants__ = __webpack_require__(5);
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__contants__ = __webpack_require__(4);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__selectors_getFlattenedTree__ = __webpack_require__(9);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selectors_nodes__ = __webpack_require__(2);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shapes_nodeShapes__ = __webpack_require__(3);
@@ -3684,7 +3684,7 @@ object-assign
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(
           __WEBPACK_IMPORTED_MODULE_0_react__,
         );
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(4);
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(5);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(
           __WEBPACK_IMPORTED_MODULE_1_classnames__,
         );
@@ -3767,7 +3767,7 @@ object-assign
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(
           __WEBPACK_IMPORTED_MODULE_0_react__,
         );
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(4);
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(5);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(
           __WEBPACK_IMPORTED_MODULE_1_classnames__,
         );
@@ -3860,7 +3860,7 @@ object-assign
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(
           __WEBPACK_IMPORTED_MODULE_0_react__,
         );
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(4);
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(5);
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(
           __WEBPACK_IMPORTED_MODULE_1_classnames__,
         );
@@ -3960,15 +3960,11 @@ object-assign
         /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_debounce___default = __webpack_require__.n(
           __WEBPACK_IMPORTED_MODULE_2_lodash_debounce__,
         );
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_classnames__ = __webpack_require__(4);
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_classnames___default = __webpack_require__.n(
-          __WEBPACK_IMPORTED_MODULE_3_classnames__,
-        );
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__filtering_DefaultGroupRenderer__ = __webpack_require__(
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__filtering_DefaultGroupRenderer__ = __webpack_require__(
           27,
         );
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shapes_nodeShapes__ = __webpack_require__(3);
-        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__selectors_filtering__ = __webpack_require__(28);
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shapes_nodeShapes__ = __webpack_require__(3);
+        /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selectors_filtering__ = __webpack_require__(28);
         var _class, _temp;
 
         function _classCallCheck(instance, Constructor) {
@@ -4049,20 +4045,18 @@ object-assign
               nodes = _props.nodes,
               treeRenderer = _props.children,
               groups = _props.groups,
-              selectedGroup = _props.selectedGroup,
-              GroupRenderer = _props.groupRenderer,
-              onSelectedGroupChange = _props.onSelectedGroupChange;
+              selectedGroup = _props.selectedGroup;
 
             var relevantNodes =
               groups && selectedGroup && groups[selectedGroup]
-                ? Object(__WEBPACK_IMPORTED_MODULE_6__selectors_filtering__['a' /* filterNodes */])(
+                ? Object(__WEBPACK_IMPORTED_MODULE_5__selectors_filtering__['a' /* filterNodes */])(
                     groups[selectedGroup].filter,
                     nodes,
                   )
                 : {nodes: nodes, nodeParentMappings: []};
 
             var _ref2 = filterTerm
-                ? Object(__WEBPACK_IMPORTED_MODULE_6__selectors_filtering__['a' /* filterNodes */])(
+                ? Object(__WEBPACK_IMPORTED_MODULE_5__selectors_filtering__['a' /* filterNodes */])(
                     nameMatchesSearchTerm(filterTerm),
                     relevantNodes.nodes,
                   )
@@ -4072,25 +4066,23 @@ object-assign
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              {className: 'tree-filter-container'},
+              null,
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                {className: __WEBPACK_IMPORTED_MODULE_3_classnames___default()('tree-lookup-input', {group: !!groups})},
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
-                  value: filterText,
-                  onChange: this.handleFilterTextChange,
-                  placeholder: 'Search...',
-                }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', {
-                  'aria-hidden': 'true',
-                  className: 'mi mi-11 mi-search',
-                }),
-                groups &&
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(GroupRenderer, {
-                    groups: groups,
-                    selectedGroup: selectedGroup,
-                    onChange: onSelectedGroupChange,
-                  }),
+                null,
+                typeof this.props.inputFilter === 'function'
+                  ? this.props.inputFilter({
+                      filterText: filterText,
+                      handleFilterTextChange: this.handleFilterTextChange,
+                    })
+                  : null,
+                typeof this.props.groups === 'function'
+                  ? this.props.groups({
+                      groups: groups,
+                      selectedGroup: selectedGroup,
+                      onSelectedGroupChange: onSelectedGroupChange,
+                    })
+                  : null,
               ),
               treeRenderer({nodes: filteredNodes, nodeParentMappings: nodeParentMappings}),
             );
@@ -4101,13 +4093,13 @@ object-assign
         (_class.childContextTypes = {
           unfilteredNodes: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.arrayOf(
             __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.shape(
-              __WEBPACK_IMPORTED_MODULE_5__shapes_nodeShapes__['b' /* Node */],
+              __WEBPACK_IMPORTED_MODULE_4__shapes_nodeShapes__['b' /* Node */],
             ),
           ).isRequired,
         }),
         (_class.defaultProps = {
           debouncer: __WEBPACK_IMPORTED_MODULE_2_lodash_debounce___default.a,
-          groupRenderer: __WEBPACK_IMPORTED_MODULE_4__filtering_DefaultGroupRenderer__['a' /* default */],
+          groupRenderer: __WEBPACK_IMPORTED_MODULE_3__filtering_DefaultGroupRenderer__['a' /* default */],
         }),
         _temp);
 
