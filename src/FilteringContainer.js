@@ -52,7 +52,7 @@ export default class FilteringContainer extends React.Component {
 
   render() {
     const {filterTerm, filterText} = this.state;
-    const {nodes, children: treeRenderer, groups, selectedGroup} = this.props;
+    const {nodes, children: treeRenderer, groups, selectedGroup, onSelectedGroupChange} = this.props;
 
     const relevantNodes =
       groups && selectedGroup && groups[selectedGroup]
@@ -80,8 +80,9 @@ export default class FilteringContainer extends React.Component {
 FilteringContainer.propTypes = {
   children: PropTypes.func.isRequired,
   debouncer: PropTypes.func,
-  groups: PropTypes.object,
+  groups: PropTypes.func,
   selectedGroup: PropTypes.string,
   groupRenderer: PropTypes.func,
   onSelectedGroupChange: PropTypes.func,
+  inputFilter: PropTypes.func,
 };

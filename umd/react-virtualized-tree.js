@@ -4045,7 +4045,8 @@ object-assign
               nodes = _props.nodes,
               treeRenderer = _props.children,
               groups = _props.groups,
-              selectedGroup = _props.selectedGroup;
+              selectedGroup = _props.selectedGroup,
+              onSelectedGroupChange = _props.onSelectedGroupChange;
 
             var relevantNodes =
               groups && selectedGroup && groups[selectedGroup]
@@ -4099,10 +4100,11 @@ object-assign
         FilteringContainer.propTypes = {
           children: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func.isRequired,
           debouncer: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
-          groups: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.object,
+          groups: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
           selectedGroup: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.string,
           groupRenderer: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
           onSelectedGroupChange: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
+          inputFilter: __WEBPACK_IMPORTED_MODULE_1_prop_types___default.a.func,
         };
 
         /***/
