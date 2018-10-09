@@ -45,6 +45,9 @@ export default class TreeContainer extends React.Component {
   render() {
     const flattenedTree = getFlattenedTree(this.props.nodes);
     const rowIndex = getRowIndexFromId(flattenedTree, this.props.scrollToId);
+    const rowRenderer = this.props.rowRenderer
+      ? this.props.rowRenderer(this.handleChange, this.props.nodeMarginLeft)
+      : null;
     return (
       <Tree
         nodeMarginLeft={this.props.nodeMarginLeft}
@@ -52,9 +55,7 @@ export default class TreeContainer extends React.Component {
         onChange={this.handleChange}
         NodeRenderer={this.props.children}
         scrollToIndex={rowIndex}
-        rowRenderer={
-          this.props.rowRenderer ? this.props.rowRenderer(this.props.nodeMarginLeft, this.handleChange) : null
-        }
+        rowRenderer={rowRenderer}
       />
     );
   }
