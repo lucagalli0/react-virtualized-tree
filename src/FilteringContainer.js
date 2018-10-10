@@ -65,7 +65,7 @@ export default class FilteringContainer extends React.Component {
 
     return (
       <React.Fragment>
-        <div>
+        <div className="filters-wrapper">
           {typeof this.props.renderInputFilter === 'function'
             ? this.props.renderInputFilter({filterText, handleFilterTextChange: this.handleFilterTextChange})
             : null}
