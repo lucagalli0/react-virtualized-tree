@@ -66,10 +66,10 @@ export default class FilteringContainer extends React.Component {
     return (
       <React.Fragment>
         <div>
-          {typeof this.props.inputFilter === 'function'
+          {typeof this.props.renderInputFilter === 'function'
             ? this.props.renderInputFilter({filterText, handleFilterTextChange: this.handleFilterTextChange})
             : null}
-          {typeof this.props.groups === 'function'
+          {typeof this.props.renderGroupFilter === 'function'
             ? this.props.renderGroupFilter({groups, selectedGroup, onSelectedGroupChange})
             : null}
         </div>
