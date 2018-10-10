@@ -66,10 +66,10 @@ export default class FilteringContainer extends React.Component {
     return (
       <React.Fragment>
         {typeof this.props.inputFilter === 'function'
-          ? this.props.inputFilter({filterText, handleFilterTextChange: this.handleFilterTextChange})
+          ? this.props.renderInputFilter({filterText, handleFilterTextChange: this.handleFilterTextChange})
           : null}
         {typeof this.props.groups === 'function'
-          ? this.props.groups({groups, selectedGroup, onSelectedGroupChange})
+          ? this.props.renderGroupFilter({groups, selectedGroup, onSelectedGroupChange})
           : null}
         {treeRenderer({nodes: filteredNodes, nodeParentMappings})}
       </React.Fragment>
@@ -80,9 +80,8 @@ export default class FilteringContainer extends React.Component {
 FilteringContainer.propTypes = {
   children: PropTypes.func.isRequired,
   debouncer: PropTypes.func,
-  groups: PropTypes.func,
   selectedGroup: PropTypes.string,
-  groupRenderer: PropTypes.func,
   onSelectedGroupChange: PropTypes.func,
-  inputFilter: PropTypes.func,
+  renderInputFilter: PropTypes.func,
+  renderGroupFilter: PropTypes.func,
 };
