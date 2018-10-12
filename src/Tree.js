@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {AutoSizer, List, CellMeasurerCache, CellMeasurer} from 'react-virtualized';
+import {AutoSizer, List} from 'react-virtualized';
 
 import {FlattenedNode} from './shapes/nodeShapes';
 
