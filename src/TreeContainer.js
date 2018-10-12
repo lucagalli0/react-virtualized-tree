@@ -55,6 +55,7 @@ export default class TreeContainer extends React.Component {
         onChange={this.handleChange}
         NodeRenderer={this.props.children}
         scrollToIndex={rowIndex}
+        rowHeight={this.props.rowHeight}
         rowRenderer={rowRenderer}
       />
     );

@@ -5,33 +5,14 @@ import {AutoSizer, List, CellMeasurerCache, CellMeasurer} from 'react-virtualize
 import {FlattenedNode} from './shapes/nodeShapes';
 
 export default class Tree extends React.Component {
-  _cache = new CellMeasurerCache({
-    fixedWidth: true,
-    minHeight: 20,
-  });
-
-  rowRenderer = ({node, key, measure, style, NodeRenderer}) => {
-    const {nodeMarginLeft} = this.props;
-
-    return (
-      <div key={key} className="tree-node" style={{...style, marginLeft: node.deepness * nodeMarginLeft}}>
-        <NodeRenderer node={node} onChange={this.props.onChange} measure={measure} />
-      </div>
-    );
-  };
-
-  measureRowRenderer = nodes => ({key, index, style, parent}) => {
-    const {NodeRenderer} = this.props;
+  rowRenderer = nodes => ({key, index, style}) => {
+    const {nodeMarginLeft, NodeRenderer} = this.props;
     const node = nodes[index];
 
     return (
-      <CellMeasurer cache={this._cache} columnIndex={0} key={key} rowIndex={index} parent={parent}>
-        {m =>
-          this.props.rowRenderer
-            ? this.props.rowRenderer({...m, node, key, style, NodeRenderer})
-            : this.rowRenderer({...m, node, key, style, NodeRenderer})
-        }
-      </CellMeasurer>
+      <div key={key} className="tree-node" style={{...style, marginLeft: node.deepness * nodeMarginLeft}}>
+        <NodeRenderer node={node} onChange={this.props.onChange} />
+      </div>
     );
   };
 
@@ -42,12 +23,11 @@ export default class Tree extends React.Component {
       <AutoSizer disableWidth={Boolean(width)}>
         {({height, width: autoWidth}) => (
           <List
-            deferredMeasurementCache={this._cache}
             ref={r => (this._list = r)}
             height={height}
             rowCount={nodes.length}
-            rowHeight={this._cache.rowHeight}
-            rowRenderer={this.measureRowRenderer(nodes)}
+            rowHeight={this.props.rowHeight}
+            rowRenderer={this.rowRenderer(nodes)}
             width={width || autoWidth}
             scrollToIndex={scrollToIndex}
           />
@@ -63,4 +43,5 @@ Tree.propTypes = {
   onChange: PropTypes.func.isRequired,
   nodeMarginLeft: PropTypes.number,
   width: PropTypes.number,
+  rowHeight: PropTypes.number,
 };
