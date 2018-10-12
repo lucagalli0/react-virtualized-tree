@@ -27,7 +27,7 @@ export default class Tree extends React.Component {
             height={height}
             rowCount={nodes.length}
             rowHeight={this.props.rowHeight}
-            rowRenderer={rowRenderer(nodes)}
+            rowRenderer={rowRenderer(nodes, this.props.onChange, this.props.NodeRenderer)}
             width={width || autoWidth}
             scrollToIndex={scrollToIndex}
           />
